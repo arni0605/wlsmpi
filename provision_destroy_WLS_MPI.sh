@@ -36,13 +36,12 @@ echo "Creating Plan Job"
 CREATED_PLAN_JOB_ID=$(oci resource-manager job create-plan-job --stack-id $stack_id --max-wait-seconds 120 --wait-for-state SUCCEEDED --query 'data.id' --raw-output)
 echo "Created Plan Job Id: ${CREATED_PLAN_JOB_ID}"
 
-echo "Getting Plan Job Logs"
-echo $(oci resource-manager job get-job-logs --job-id $CREATED_PLAN_JOB_ID --all)  > plan-job.log_$(date '+%Y-%m-%d-%H:%M:%S')
-
 jobstate=`oci resource-manager job get --job-id $CREATED_PLAN_JOB_ID --query 'data."lifecycle-state"' --raw-output`
 
 if [[ "$jobstate" = "SUCCEEDED" ]]
 then
+echo "Getting Plan Job Logs"
+echo $(oci resource-manager job get-job-logs --job-id $CREATED_PLAN_JOB_ID --all)  > plan-job.log_$(date '+%Y-%m-%d-%H:%M:%S')
 echo "Creating Apply Job"
 CREATED_APPLY_JOB_ID=$(oci resource-manager job create-apply-job --stack-id $stack_id --execution-plan-strategy FROM_PLAN_JOB_ID --execution-plan-job-id "$CREATED_PLAN_JOB_ID" --wait-for-state SUCCEEDED --query 'data.id' --raw-output)
 echo "Created Apply Job Id: ${CREATED_APPLY_JOB_ID}"
