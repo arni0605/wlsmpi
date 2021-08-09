@@ -2,7 +2,7 @@
 "compartment_ocid":"ocid1.compartment.oc1..aaaaaaaawt3pfvwwsfqcvmn2xgvk5j6yqjvinyk2lcukp2luffymupxqkxva",
 "instance_shape":"VM.Standard.E2.1",
 "region":"eu-frankfurt-1",
-"service_name":"j2ee",
+"service_name":"j2ee-nonjrf",
 "wls_admin_password_ocid":"ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaaretfhzqaouxt73iz6tisrou66oohfyuthvbzuykp6k343jcwxttq",
 "wls_admin_user":"weblogic",
 "wls_edition":"EE",
