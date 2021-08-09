@@ -1,0 +1,79 @@
+$ ./provisionWLS_MPI.sh
+Setting up OCI CLI environment variables
+OCI CLI Environment has been setup and junk json files have been removed successfully
+Converting EXCEL to JSON
+Validating JSON\n
+Count=20
+Resultant JSON as follows
+{
+"compartment_ocid":"ocid1.compartment.oc1..aaaaaaaawt3pfvwwsfqcvmn2xgvk5j6yqjvinyk2lcukp2luffymupxqkxva",
+"instance_shape":"VM.Standard.E2.1",
+"region":"eu-frankfurts-19",
+"service_name":"j2ee",
+"wls_admin_password_ocid":"ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaaretfhzqaouxt73iz6tisrou66oohfyuthvbzuykp6k343jcwxttq",
+"wls_admin_user":"weblogic",
+"wls_edition":"EE",
+"wls_node_count":"1",
+"wls_console_port":"7001",
+"tenancy_ocid":"ocid1.tenancy.oc1..aaaaaaaaa6z4a7wdbyc3ozms2s5dgvsmznnfafsjdsuv5r5gigrc3ypgtweq",
+"assign_weblogic_public_ip":"true",
+"use_regional_subnet":"true",
+"wls_existing_vcn_id":"ocid1.vcn.oc1.eu-frankfurt-1.amaaaaaaretfhzqaj57jp222y66mtetjtfmbswjdemwnnrpac3fpzngpndla",
+"wls_subnet_id":"ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaapmmrkub5z6be3m2uhv73popy4xjbrreavaxl7kd6io2ssh7jdnmq",
+"ssh_public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBEg+PRqAEHyACT4vzlByaZE1GPvy8+5sINholcXHB/98TMfRmw7HIPG6NSEeBLSXNQ5r9q3JBYX8dDqnBsYfgQCtkc1hBqIroraEB6FvDZkglHwO2MomFFM3JVUWSNZb6YrM9IJY/4CifupPj6iKTNUnmxfRKxqkl5eP/HM3H1gCkssQFcemVOzEqri4r/pY/U6TssCh+qR5vRCbXYjnHLQ+ce+gee9klqI99Ki5tDiwrnyxQW7Z3EuG3hfh/ojWhy9n1Cgaj2zfGbRDmt4iniPte0J4C4iphgmJ81kVWCauANB41bk2EwzUjZVb7JX42PK6CXYH/u34KZshoT4iR ssh-key-2021-05-23",
+"add_load_balancer":"false",
+"is_lb_private":"false",
+"lb_use_https":"false",
+"is_idcs_selected":"false"
+}
+
+Please validate JSON here if you want  https://jsonlint.com/
+ocid1.compartment.oc1..aaaaaaaawt3pfvwwsfqcvmn2xgvk5j6yqjvinyk2lcukp2luffymupxqkxva
+Updating Job with input.json
+WARNING: Updates to config-source and variables and freeform-tags and defined-tags will replace any existing values. Are you sure you want to continue? [y/N]: {
+  "data": {
+    "compartment-id": "ocid1.compartment.oc1..aaaaaaaawt3pfvwwsfqcvmn2xgvk5j6yqjvinyk2lcukp2luffymupxqkxva",
+    "config-source": {
+      "config-source-type": "ZIP_UPLOAD",
+      "working-directory": null
+    },
+    "defined-tags": {},
+    "description": "WLS automated provisioning for OCI",
+    "display-name": "Weblogic MPI through OCI CLI",
+    "freeform-tags": {},
+    "id": "ocid1.ormstack.oc1.eu-frankfurt-1.aaaaaaaadb3rdmj4hibbkjz5jszaoq5pin4qwwe63yc67g5sl2dxctpjhkoq",
+    "lifecycle-state": "ACTIVE",
+    "stack-drift-status": "NOT_CHECKED",
+    "terraform-version": "0.12.x",
+    "time-created": "2021-08-06T12:59:52.146000+00:00",
+    "time-drift-last-checked": null,
+    "variables": {
+      "add_load_balancer": "false",
+      "assign_weblogic_public_ip": "true",
+      "compartment_ocid": "ocid1.compartment.oc1..aaaaaaaawt3pfvwwsfqcvmn2xgvk5j6yqjvinyk2lcukp2luffymupxqkxva",
+      "instance_shape": "VM.Standard.E2.1",
+      "is_idcs_selected": "false",
+      "is_lb_private": "false",
+      "lb_use_https": "false",
+      "region": "eu-frankfurts-19",
+      "service_name": "j2ee",
+      "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBEg+PRqAEHyACT4vzlByaZE1GPvy8+5sINholcXHB/98TMfRmw7HIPG6NSEeBLSXNQ5r9q3JBYX8dDqnBsYfgQCtkc1hBqIroraEB6FvDZkglHwO2MomFFM3JVUWSNZb6YrM9IJY/4CifupPj6iKTNUnmxfRKxqkl5eP/HM3H1gCkssQFcemVOzEqri4r/pY/U6TssCh+qR5vRCbXYjnHLQ+ce+gee9klqI99Ki5tDiwrnyxQW7Z3EuG3hfh/ojWhy9n1Cgaj2zfGbRDmt4iniPte0J4C4iphgmJ81kVWCauANB41bk2EwzUjZVb7JX42PK6CXYH/u34KZshoT4iR ssh-key-2021-05-23",
+      "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaaa6z4a7wdbyc3ozms2s5dgvsmznnfafsjdsuv5r5gigrc3ypgtweq",
+      "use_regional_subnet": "true",
+      "wls_admin_password_ocid": "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaaretfhzqaouxt73iz6tisrou66oohfyuthvbzuykp6k343jcwxttq",
+      "wls_admin_user": "weblogic",
+      "wls_console_port": "7001",
+      "wls_edition": "EE",
+      "wls_existing_vcn_id": "ocid1.vcn.oc1.eu-frankfurt-1.amaaaaaaretfhzqaj57jp222y66mtetjtfmbswjdemwnnrpac3fpzngpndla",
+      "wls_node_count": "1",
+      "wls_subnet_id": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaapmmrkub5z6be3m2uhv73popy4xjbrreavaxl7kd6io2ssh7jdnmq"
+    }
+  },
+  "etag": "f294acaf671a5a5b1fc57275ee569cea8aff2e336ffd6d5940fe6c5508fdf4b0"
+}
+Plan Your Job..
+Action completed. Waiting until the resource has entered state: ('SUCCEEDED',)
+Failed to wait until the resource entered the specified state. Outputting last known resource state
+Plan Job has Failed
+Getting Plan Job Logs
+Please check OCI Console.Now Exiting...
